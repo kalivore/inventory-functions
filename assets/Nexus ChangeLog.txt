@@ -1,0 +1,80 @@
+Version 3.02.00
+
+Added new functions for poisons: 
+WornObjectGetPoison
+WornObjectSetPoison
+WornObjectRemovePoison
+WornObjectGetPoisonCharges
+WornObjectSetPoisonCharges
+
+GetPoison
+SetPoison
+RemovePoison
+GetPoisonCharges
+SetPoisonCharges
+
+WornGetPoison
+WornSetPoison
+WornRemovePoison
+WornGetPoisonCharges
+WornSetPoisonCharges
+
+
+
+Version 3.01.00
+
+Added new functions for editing Ammo objects (ie arrows and bolts): 
+SetIsBolt 
+SetProjectile 
+SetDamage
+
+
+
+Version 3.00.00
+
+Restricting found results to only actual Spells (ie items marked in the Creation Kit as 'Spell'). Will therefore ignore Ability items.
+As a result, changed default behaviour of ActorGetSpells and ActorBaseGetSpells - these will now return *all* spells (rather than an empty array, as before).
+Likewise, ActorHasSpell and ActorBaseHasSpell will now return TRUE if called with no specific arguments, and the Actor/ActorBase does have at least one real Spell.
+Added functions to get the valid values of spell Schools (eg SpellSchoolAlteration() returns "Alteration"); some typical Levels (eg SpellLevelAdept() returns 50); and valid Comparison Levels (eg SpellLevelComparisonGtEq() returns 1).
+
+
+
+Version 2.00.00
+
+Added functions: 
+Spell[] Function ActorGetSpells(Actor akActor, Keyword akKeyword = None, string asSchool = "", int aiLevel = -1, int aiLevelComparison = 1, bool abSearchBase = true) 
+
+Spell[] Function ActorBaseGetSpells(ActorBase akActorBase, Keyword akKeyword = None, string asSchool = "", int aiLevel = -1, int aiLevelComparison = 1) 
+
+Shout[] Function ActorBaseGetShouts(ActorBase akActorBase, Keyword akKeyword = None) 
+
+
+bool Function ActorHasSpell(Actor akActor, Keyword akKeyword = None, string asSchool = "", int aiLevel = -1, int aiLevelComparison = 1, bool abSearchBase = true) 
+bool Function ActorBaseHasSpell(ActorBase akActorBase, Keyword akKeyword = None, string asSchool = "", int aiLevel = -1, int aiLevelComparison = 1) 
+bool Function ActorBaseHasShout(ActorBase akActorBase, Keyword akKeyword) 
+
+
+Deprecated previous functions: 
+ActorHasSpellSchool 
+ActorBaseHasSpellSchool 
+ActorHasSpellKeyword 
+ActorBaseHasSpellKeyword 
+
+These have been replaced with the more generic Actor(Base)ActorHasSpell functions.
+
+
+
+Version 1.01.00
+
+Added functions: 
+bool Function ActorHasSpellSchool(Actor akActor, string asSchool, bool abSearchBase) 
+bool Function ActorBaseHasSpellSchool(ActorBase akActorBase, string asSchool) 
+
+bool Function ActorHasSpellKeyword(Actor akActor, Keyword akKeyword, bool abSearchBase) 
+bool Function ActorBaseHasSpellKeyword(ActorBase akActorBase, Keyword akKeyword) 
+
+
+
+Version 1.00.00
+
+Initial release
